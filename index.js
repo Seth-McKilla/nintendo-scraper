@@ -4,10 +4,12 @@ import puppeteer from "puppeteer";
   const browser = await puppeteer.launch({});
   const page = await browser.newPage();
 
-  await page.goto(
-    "https://www.nintendo.com/store/products/nintendo-64-controller/"
+  // Add item to card
+  await page.goto("https://www.nintendo.com/store/products/leg-strap-114297/");
+  await page.click(
+    "#main > section.Herostyles__HeroSection-sc-1gi6jtj-0.kKfMBG > div > div.Herostyles__HeroInfo-sc-1gi6jtj-8.gAHENY > div.Gridstyles-sc-1sq8hhn-0.khqeGV > button"
   );
-  await page.screenshot({ path: "n64.png" });
+  await page.screenshot({ path: "checkout.png" });
 
   await browser.close();
 })();
